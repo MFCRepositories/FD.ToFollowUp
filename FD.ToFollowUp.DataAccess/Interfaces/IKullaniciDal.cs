@@ -3,12 +3,8 @@ using System.Collections.Generic;
 
 namespace FD.ToFollowUp.DataAccess.Interfaces
 {
-    public interface IKullaniciDal
+    public interface IKullaniciDal:IGenericDal<Kullanici>
     {
-        void Kaydet(Kullanici tablo);
-        void Sil(Kullanici tablo);
-        void Guncelle(Kullanici tablo);
-        Kullanici GetirIdile(int id);
-        List<Kullanici> GetirHepsi();
+         
     }
 }

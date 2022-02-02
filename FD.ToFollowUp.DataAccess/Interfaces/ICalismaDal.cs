@@ -3,13 +3,8 @@ using System.Collections.Generic;
 
 namespace FD.ToFollowUp.DataAccess.Interfaces
 {
-    public interface ICalismaDal
+    public interface ICalismaDal:IGenericDal<Calisma>
     {
-        void Kaydet(Calisma tablo);
-        void Sil(Calisma tablo);
-        void Guncelle(Calisma tablo);
-        Calisma GetirIdile(int id);
-        List<Calisma> GetirHepsi();
 
     }
 }

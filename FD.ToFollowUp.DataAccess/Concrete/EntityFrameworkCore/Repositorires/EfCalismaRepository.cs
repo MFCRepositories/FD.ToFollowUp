@@ -2,34 +2,13 @@
 using FD.ToFollowUp.Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using FD.ToFollowUp.DataAccess.Concrete.EntityFrameworkCore.Contexts;
 
 namespace FD.ToFollowUp.DataAccess.Concrete.EntityFrameworkCore.Repositorires
 {
-    public class EfCalismaRepository:ICalismaDal
+    public class EfCalismaRepository:EfGenericRepository<Calisma>,ICalismaDal
     {
-        public void Kaydet(Calisma tablo)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Sil(Calisma tablo)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Guncelle(Calisma tablo)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Calisma GetirIdile(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Calisma> GetirHepsi()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
