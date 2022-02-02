@@ -12,6 +12,7 @@ namespace FD.ToFollowUp.Entities.Concrete
         public string Aciklamasi { get; set; }
         public DateTime OlusturulmaTarih { get; set; }
         public Kullanici Kullanici { get; set; }
+        public bool Durum { get; set; }
         public int KullaniciId { get; set; }
       
     }

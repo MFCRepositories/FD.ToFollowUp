@@ -15,8 +15,8 @@ namespace FD.ToFollowUp.DataAccess.Concrete.EntityFrameworkCore.Mapping
         {
             builder.HasKey(c => c.Id);
             builder.Property(c => c.Id).UseIdentityColumn();
-            builder.Property(I => I.Ad).HasMaxLength(100).IsRequired();
-            builder.Property(I => I.Aciklamasi).HasMaxLength(100).IsRequired();
+            builder.Property(I => I.Ad).HasMaxLength(200);
+            builder.Property(I => I.Aciklamasi).HasColumnName("ntext");
 
 
 
@@ -25,7 +25,7 @@ namespace FD.ToFollowUp.DataAccess.Concrete.EntityFrameworkCore.Mapping
             //{
             //    Calisma c = new Calisma
             //    {
-                     
+
             //        Id = i,
             //        Aciklamasi = FakeData.TextData.GetSentences(3),
             //        Ad = FakeData.TextData.GetSentence(),
@@ -33,8 +33,8 @@ namespace FD.ToFollowUp.DataAccess.Concrete.EntityFrameworkCore.Mapping
             //    };
             //    builder.HasData(c);
             //}
-           
-          
+
+
         }
     }
 }

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FD.ToFollowUp.DataAccess.Migrations
 {
     [DbContext(typeof(ToFollowUpContext))]
-    [Migration("20220202090530_ToFollowUpFirstCreate")]
+    [Migration("20220202092641_ToFollowUpFirstCreate")]
     partial class ToFollowUpFirstCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,14 +31,15 @@ namespace FD.ToFollowUp.DataAccess.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Aciklamasi")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
+                        .HasColumnName("ntext")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Ad")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
+                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(200);
+
+                    b.Property<bool>("Durum")
+                        .HasColumnType("bit");
 
                     b.Property<int>("KullaniciId")
                         .HasColumnType("int");

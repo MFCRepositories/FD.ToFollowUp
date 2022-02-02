@@ -29,9 +29,10 @@ namespace FD.ToFollowUp.DataAccess.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Ad = table.Column<string>(maxLength: 100, nullable: false),
-                    Aciklamasi = table.Column<string>(maxLength: 100, nullable: false),
+                    Ad = table.Column<string>(maxLength: 200, nullable: true),
+                    ntext = table.Column<string>(nullable: true),
                     OlusturulmaTarih = table.Column<DateTime>(nullable: false),
+                    Durum = table.Column<bool>(nullable: false),
                     KullaniciId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
