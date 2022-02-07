@@ -1,16 +1,31 @@
-﻿
+﻿@using FD.ToFollowUp.WebUI.ViewComponents
+@model List<MusteriViewModel>
+
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+@Html.Partial("_Kategoriler")
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-    Indexxx
-</head>
-<body>
-</body>
-</html>
+<table>
+    <fatih gelen-data="Ben seni severim bek seni severin"> </fatih>
+    <tr>
+        <th>ViewBag.Isim</th>
+        <td>@ViewBag.Isim</td>
+    </tr>
+    <tr>
+        <th>ViewData.Isim</th>
+        <td>@ViewData["Isim"]</td>
+    </tr>
+    <tr>
+        <th>TempData["Isim"]</th>
+        <td>@TempData["Isim"]</td>
+
+    </tr>
+
+</table>
+
+@await Component.InvokeAsync( "Urunler")
+
+
+

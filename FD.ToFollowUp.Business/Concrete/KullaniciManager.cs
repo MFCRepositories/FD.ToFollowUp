@@ -26,7 +26,7 @@ namespace FD.ToFollowUp.Business.Concrete
 
         public void Sil(Kullanici tablo)
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException( );
         }
 
         public void Guncelle(Kullanici tablo)
