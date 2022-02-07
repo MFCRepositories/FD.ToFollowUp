@@ -26,7 +26,7 @@ namespace FD.ToFollowUp.WebUI
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseStaticFiles();
             app.UseRouting();
 
 
