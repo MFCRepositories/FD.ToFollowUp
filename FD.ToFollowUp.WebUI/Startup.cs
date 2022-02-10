@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FD.ToFollowUp.WebUI.Constraints;
+using FD.ToFollowUp.WebUI.Middlewares;
 
 namespace FD.ToFollowUp.WebUI
 {
@@ -27,20 +29,35 @@ namespace FD.ToFollowUp.WebUI
                 app.UseDeveloperExceptionPage();
             }
             app.UseStaticFiles();
+            app.UseCustomStaticFiles();
             app.UseRouting();
-
-
-
 
 
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}"
-
+                   name:"areas",
+                   pattern:"{area}/{controller=Home}/{action=Index}/{id}"
                 );
+                endpoints.MapControllerRoute(
+                    name: "programlamaRoute",
+                    pattern: "programlama/{dil}",
+                    defaults: new {controller="Home",action="Index"} ,
+                    constraints:new {dil=new Programlama()}
+                    //csharp,java,php
+                    //RouteConstraint
+                );  
+              
+                endpoints.MapControllerRoute(
+                    name: "kisi",
+                    pattern: "kisiler",
+                    defaults: new {controller="Home",action="Index"} 
+                ); 
+                endpoints.MapControllerRoute(
+                  name: "default",
+                  pattern: "{controller=Home}/{action=Index}/{id?}"
+              );
             });
         }
     }
